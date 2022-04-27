@@ -1,0 +1,22 @@
+.fixed-bar {
+  position: relative;
+  z-index: 10;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-sizing: content-box;
+  
+  > div {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    >:first-child {
+      // 触发 bfc  使得能获取到内部元素包含 marginTop 的值
+      overflow: hidden;
+    }
+  }
+
+  .safe-area {
+    height: env(safe-area-inset-bottom);
+  }
+}

@@ -1,0 +1,27 @@
+.loading-wrapper {
+  padding: 0 !important;
+
+  .clock-loading {
+    padding: 28px 34px;
+    .clock {
+      margin: 0 auto;
+      width: 32px;
+      height: 32px;
+    }
+  }
+  
+  .page-loading {
+    padding: 24px;
+    div {
+      width: 34px;
+      height: 34px;
+    }
+  }
+
+  &.lazy {
+    > div {
+      display: none;
+    }
+  }
+}
+

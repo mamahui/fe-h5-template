@@ -1,0 +1,141 @@
+//@import "~antd-mobile/bundle/style.css";
+:root:root {
+  --adm-color-primary: red;
+}
+@main-color: #333333;
+@body-color: @main-color;
+@base-color: #070707;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+html {
+  touch-action: manipulation;
+}
+body {
+  font-size: 12px;
+  font-family: PingFang SC, Microsoft YaHei, arial, sans-serif;
+  color: @body-color;
+}
+
+::-webkit-input-placeholder {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+input,
+textarea {
+  -webkit-user-select: auto;
+  margin: 0;
+  padding: 0;
+  outline: none;
+}
+
+@font-face {
+  font-family: gotham;
+  font-display: swap;
+  src: url("@{public-path}fonts/gotham.woff2") format("woff2"),
+  url("@{public-path}fonts/gotham.woff") format("woff");
+}
+
+@font-face {
+  font-family: gotham-bold;
+  font-display: swap;
+  src: url("@{public-path}fonts/gotham-bold.woff2") format("woff2"),
+  url("@{public-path}fonts/gotham-bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: fiture_score;
+  src: url("@{public-path}fonts/fiture_score-normal-Taurus.otf") format("opentype"),
+}
+@font-face {
+  font-family: fiture-score;
+  src: url("@{public-path}fonts/fiture_score-normal-Regular.otf") format("opentype"),
+  url("@{public-path}fonts/fiture_score-normal-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: HYWenHei;
+  src: url("@{public-path}fonts/HYWenHei-75W.otf") format("opentype"),
+}
+
+
+.gotham {
+  font-family: gotham;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1em;
+  font-weight: normal;
+  color: @base-color;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  pointer-events: none;
+}
+.img-enable-points{
+  pointer-events: auto;
+}
+
+.fl {
+  float: left;
+}
+
+.fr {
+  float: right;
+}
+
+.clearfix {
+  zoom: 1;
+
+  &:after {
+    content: '';
+    display: table;
+    height: 0;
+    clear: both;
+    overflow: hidden;
+  }
+}
+
+.clock-loading {
+  padding: 14px 10px;
+
+  .clock {
+    margin: 0 auto;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.page-loading {
+  padding: 10px 0;
+
+  div {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.ellipsis-one{
+  display:block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}

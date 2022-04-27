@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, viewport-fit=cover" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="format-detection" content="email=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="browsermode" content="application">
+  <link rel="icon" href="<%= context.config.publicPath %>favicon.png" type="image/x-icon" />
+  <% if(context.config.define["process.env.DEPLOY_ENV"] !== "prod"){ %>
+  <script src="<%= context.config.publicPath %>edura.js"></script>
+  <script>eruda.init();</script>
+  <% } %>
+  <title>&lrm;</title>
+</head>
+
+<body class="body">
+  <div id="root"></div>
+</body>
+
+</html>

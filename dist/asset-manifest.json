@@ -1,0 +1,28 @@
+{
+  "_chunksMap": {
+    "umi": [
+      "/template-h5/vendors.c4913579.chunk.css",
+      "/template-h5/vendors.39c98564.async.js",
+      "/template-h5/umi.463340a4.css",
+      "/template-h5/umi.25e70573.js"
+    ],
+    "p__test__index": [
+      "/template-h5/vendors.c4913579.chunk.css",
+      "/template-h5/vendors.39c98564.async.js",
+      "/template-h5/p__test__index.87675aad.chunk.css",
+      "/template-h5/p__test__index.6a3cbe15.async.js"
+    ]
+  },
+  "vendors.css": "/template-h5/vendors.c4913579.chunk.css",
+  "vendors.js": "/template-h5/vendors.39c98564.async.js",
+  "p__test__index.css": "/template-h5/p__test__index.87675aad.chunk.css",
+  "p__test__index.js": "/template-h5/p__test__index.6a3cbe15.async.js",
+  "umi.css": "/template-h5/umi.463340a4.css",
+  "umi.js": "/template-h5/umi.25e70573.js",
+  "edura.js": "/template-h5/edura.js",
+  "fonts/gotham-bold.woff": "/template-h5/fonts/gotham-bold.woff",
+  "fonts/gotham-bold.woff2": "/template-h5/fonts/gotham-bold.woff2",
+  "fonts/gotham.woff": "/template-h5/fonts/gotham.woff",
+  "fonts/gotham.woff2": "/template-h5/fonts/gotham.woff2",
+  "test.html": "/template-h5/test.html"
+}
