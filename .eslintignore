@@ -1,0 +1,10 @@
+/config
+public
+plugins
+dist
+.umi
+.umi-production
+.umi-test
+mock
+.eslintrc.js
+typings.d.ts

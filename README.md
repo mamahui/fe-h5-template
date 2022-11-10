@@ -1,4 +1,4 @@
-# umi project
+# fe-h5-template 项目模板
 
 ## Getting Started
 

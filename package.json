@@ -5,41 +5,56 @@
     "build": "cross-env DEPLOY_ENV=prod umi build",
     "postinstall": "umi generate tmp",
     "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
+    "lint-staged:js": "eslint --ext .js,.jsx,.ts,.tsx ",
+    "lint-staged": "lint-staged",
+    "tsc": "tsc --noEmit",
     "test": "umi-test",
     "test:coverage": "umi-test --coverage"
   },
   "gitHooks": {
-    "pre-commit": "lint-staged"
+    "pre-commit": "lint-staged",
+    "commit-msg": "commitlint --config commitlint.config.js -e -V"
   },
   "lint-staged": {
-    "*.{js,jsx,less,md,json}": [
+    "**/*.{js,jsx,ts,tsx}": "npm run lint-staged:js",
+    "**/*.{js,jsx,tsx,ts,less,md,json}": [
       "prettier --write"
-    ],
-    "*.ts?(x)": [
-      "prettier --parser=typescript --write"
     ]
   },
   "dependencies": {
+    "@suze/utils": "^1.2.1",
     "antd-mobile": "^5.10.4",
     "async-validator": "^4.0.2",
     "axios": "^0.19.2",
     "classnames": "^2.2.6",
     "copy-to-clipboard": "^3.3.1",
     "dayjs": "^1.10.7",
+    "dot-env": "^0.0.1",
+    "dotenv-webpack": "^8.0.1",
     "file-loader": "^6.2.0",
+    "howler": "^2.2.3",
+    "jweixin-npm": "^1.6.1",
     "less": "^4.1.2",
     "less-vars-to-js": "^1.3.0",
+    "lottie-web": "^5.9.6",
     "qs": "^6.9.6",
     "react": "17.x",
     "react-dom": "17.x",
-    "umi": "^3.5.23"
+    "ssr-window": "^4.0.2",
+    "umi": "3.3.6"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.0.0",
+    "@commitlint/config-conventional": "^17.0.0",
+    "@commitlint/prompt-cli": "^17.0.0",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
+    "@umijs/fabric": "^2.9.0",
     "@umijs/preset-react": "^1.8.30",
-    "@umijs/test": "^3.5.23",
+    "@umijs/test": "3.3.6",
+    "critters": "^0.0.16",
     "cross-env": "^7.0.3",
+    "eslint-plugin-prettier": "^4.0.0",
     "lint-staged": "^10.0.7",
     "postcss-px-to-viewport": "^1.1.1",
     "postcss-px2viewport": "^0.1.3",

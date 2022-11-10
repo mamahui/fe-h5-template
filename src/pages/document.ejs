@@ -7,16 +7,21 @@
   <meta name="format-detection" content="email=no">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="browsermode" content="application">
-  <link rel="icon" href="<%= context.config.publicPath %>favicon.png" type="image/x-icon" />
+  <script src="<%= context.config.publicPath %>weixin-1.6.0.js"></script>
+  <script src="//api.map.baidu.com/api?type=webgl&v=1.0&ak=ojrcdRnwNL8yFW4BpBZRpxmiwZPMNHKK"></script>
+  <link rel="icon" href="<%=context.config.publicPath %>favicon.ico" type="image/x-icon" />
   <% if(context.config.define["process.env.DEPLOY_ENV"] !== "prod"){ %>
   <script src="<%= context.config.publicPath %>edura.js"></script>
   <script>eruda.init();</script>
   <% } %>
   <title>&lrm;</title>
 </head>
+<script>
+</script>
 
 <body class="body">
   <div id="root"></div>
+
 </body>
 
 </html>

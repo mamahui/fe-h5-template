@@ -3,52 +3,58 @@ import { defineConfig } from 'umi';
 import px2viewport from 'postcss-px-to-viewport';
 import theme from './config/theme.config';
 
-const { DEPLOY_ENV = 'dev', } = process.env;
-const development = process.env.NODE_ENV !== 'production';
-const publicPath = development ? '/' : '/template-h5/';
+const { DEPLOY_ENV = 'dev' } = process.env;
+
+let publicPath = '/';
 
 export default defineConfig({
+  plugins: [require.resolve('./plugins/performance'), require.resolve('./plugins/dot-env')],
   nodeModulesTransform: {
     type: 'none',
   },
+  runtimePublicPath: true,
   fastRefresh: {},
-  antd:{
-    mobile:false
+  antd: {
+    mobile: false,
   },
-  extraPostCSSPlugins: [
-    px2viewport({ viewportWidth: 375 }),
-  ],
+  extraPostCSSPlugins: [px2viewport({ viewportWidth: 375 })],
   ssr: { staticMarkup: true },
   exportStatic: { htmlSuffix: true },
   dynamicImport: {
     loading: '@/components/DefaultLoading',
   },
-  chainWebpack(config:any) {
+  title: false,
+  publicPath, // 打包路径，默认是/
+  base: publicPath, // 打包路径，默认是/
+  history: { type: 'browser' },
+  chainWebpack: function (config, { webpack }) {
     config.merge({
       optimization: {
         splitChunks: {
           chunks: 'all',
-          automaticNameDelimiter: '.',
-          name: true,
           minSize: 30000,
-          minChunks: 1,
+          minChunks: 2,
+          automaticNameDelimiter: '.',
           cacheGroups: {
-            vendors: {
-              name: 'vendors',
-              chunks: 'all',
-              test: /[\\/]node_modules[\\/]/,
-              priority: -12,
+            vendor: {
+              name: 'common',
+              test({ resource }) {
+                return /[\\/]node_modules[\\/]/.test(resource);
+              },
+              priority: 10,
             },
           },
         },
       },
     });
+    config.module
+      .rule('media')
+      .test(/\.(mp3)$/)
+      .type('javascript/auto')
+      .use('file-loader')
+      .loader(require.resolve('file-loader'));
   },
-  title: false,
-  publicPath, // 打包路径，默认是/
-  base: publicPath, // 打包路径，默认是/
-  history: { type: 'browser' },
-  chunks: ['vendors', 'umi'],
+  chunks: ['common', 'umi'],
   hash: true,
   theme: theme(publicPath),
   alias: {

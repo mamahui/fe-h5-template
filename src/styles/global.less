@@ -1,4 +1,3 @@
-//@import "~antd-mobile/bundle/style.css";
 :root:root {
   --adm-color-primary: red;
 }
@@ -7,24 +6,24 @@
 @base-color: #070707;
 
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-  -webkit-touch-callout: none;
   -webkit-user-select: none;
   -khtml-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-touch-callout: none;
 }
 html {
   touch-action: manipulation;
 }
 body {
+  color: @body-color;
   font-size: 12px;
   font-family: PingFang SC, Microsoft YaHei, arial, sans-serif;
-  color: @body-color;
 }
 
 ::-webkit-input-placeholder {
@@ -34,44 +33,10 @@ body {
 
 input,
 textarea {
-  -webkit-user-select: auto;
   margin: 0;
   padding: 0;
   outline: none;
-}
-
-@font-face {
-  font-family: gotham;
-  font-display: swap;
-  src: url("@{public-path}fonts/gotham.woff2") format("woff2"),
-  url("@{public-path}fonts/gotham.woff") format("woff");
-}
-
-@font-face {
-  font-family: gotham-bold;
-  font-display: swap;
-  src: url("@{public-path}fonts/gotham-bold.woff2") format("woff2"),
-  url("@{public-path}fonts/gotham-bold.woff") format("woff");
-}
-
-@font-face {
-  font-family: fiture_score;
-  src: url("@{public-path}fonts/fiture_score-normal-Taurus.otf") format("opentype"),
-}
-@font-face {
-  font-family: fiture-score;
-  src: url("@{public-path}fonts/fiture_score-normal-Regular.otf") format("opentype"),
-  url("@{public-path}fonts/fiture_score-normal-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: HYWenHei;
-  src: url("@{public-path}fonts/HYWenHei-75W.otf") format("opentype"),
-}
-
-
-.gotham {
-  font-family: gotham;
+  -webkit-user-select: auto;
 }
 
 h1,
@@ -80,9 +45,9 @@ h3,
 h4,
 h5,
 h6 {
-  font-size: 1em;
-  font-weight: normal;
   color: @base-color;
+  font-weight: normal;
+  font-size: 1em;
 }
 
 img {
@@ -90,7 +55,7 @@ img {
   max-width: 100%;
   pointer-events: none;
 }
-.img-enable-points{
+.img-enable-points {
   pointer-events: auto;
 }
 
@@ -106,11 +71,11 @@ img {
   zoom: 1;
 
   &:after {
-    content: '';
     display: table;
-    height: 0;
     clear: both;
+    height: 0;
     overflow: hidden;
+    content: '';
   }
 }
 
@@ -118,9 +83,9 @@ img {
   padding: 14px 10px;
 
   .clock {
-    margin: 0 auto;
     width: 32px;
     height: 32px;
+    margin: 0 auto;
   }
 }
 
@@ -133,8 +98,15 @@ img {
   }
 }
 
-.ellipsis-one{
-  display:block;
+@font-face {
+  font-family: zcool-xiaowei;
+  src: url('https://oss3.fiture.com/4f2751/20220821/kuchfmyo.ttf') format('woff2'),
+    url('https://oss3.fiture.com/4f2751/20220821/kuchfmyo.ttf') format('ttf');
+  font-feature-settings: 'tnum' on, 'lnum' on;
+}
+
+.ellipsis-one {
+  display: block;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
