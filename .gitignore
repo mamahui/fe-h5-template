@@ -11,7 +11,7 @@
 # misc
 .DS_Store
 .vscode
-.idea
+#.idea
 
 # umi
 /src/.umi
